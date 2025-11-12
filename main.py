@@ -459,8 +459,11 @@ def submit_assessment(body: SubmitAssessmentBody, user=Depends(auth_dependency))
         raise HTTPException(status_code=400, detail="Answer count mismatch")
 
     score = 0
+    results: List[bool] = []
     for i, q in enumerate(questions):
-        if body.answers[i] == q["correct"]:
+        is_correct = body.answers[i] == q["correct"]
+        results.append(is_correct)
+        if is_correct:
             score += 1
     total = len(questions)
 
@@ -479,7 +482,7 @@ def submit_assessment(body: SubmitAssessmentBody, user=Depends(auth_dependency))
     if passed:
         db["user"].update_one({"_id": user["_id"]}, {"$set": {f"progress.{body.domain}": body.step_index}})
 
-    return {"score": score, "total": total, "passed": passed}
+    return {"score": score, "total": total, "passed": passed, "results": results}
 
 # ----------------------
 # Profile & Dashboard

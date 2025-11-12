@@ -1,9 +1,25 @@
 INFO:     Will watch for changes in these directories: ['/home/workspace']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [492] using StatReload
-INFO:     Started server process [494]
+INFO:     Started reloader process [573] using StatReload
+INFO:     Started server process [575]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     172.20.0.1:51740 - "HEAD / HTTP/1.1" 405 Method Not Allowed
-INFO:     172.20.0.1:51750 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
-INFO:     172.20.0.1:51750 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39144 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:39172 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39156 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "OPTIONS /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59914 - "OPTIONS /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "GET /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59914 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "GET /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "OPTIONS /me HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "OPTIONS /me HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "GET /me HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "GET /me HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "GET /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "GET /domains HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59898 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59924 - "GET /roadmap/Frontend%20Development HTTP/1.1" 200 OK
