@@ -54,7 +54,15 @@ ALLOWED_QUALIFICATIONS = {
 DOMAINS = [
     "Frontend Development",
     "Backend Development",
-    "AI/ML"
+    "AI/ML",
+    "Full-Stack Development",
+    "DevOps",
+    "Cloud Computing",
+    "Data Engineering",
+    "Cybersecurity",
+    "Mobile Development",
+    "UI/UX Design",
+    "QA Automation"
 ]
 
 # Simple in-code roadmaps (can be expanded or moved to DB later)
@@ -94,6 +102,36 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             "quiz": {
                 "questions": [
                     {"q": "React is a ...", "a": ["library", "framework"], "correct": 0}
+                ]
+            }
+        },
+        {
+            "index": 4,
+            "title": "Final Assessment (20 questions)",
+            "description": "Comprehensive assessment across HTML/CSS/JS/React.",
+            "videos": [],
+            "quiz": {
+                "questions": [
+                    {"q": "HTML tags are enclosed in?", "a": ["< >", "{ }"], "correct": 0},
+                    {"q": "Which tag links CSS?", "a": ["<link>", "<style>"], "correct": 0},
+                    {"q": "Flexbox property to align along main axis?", "a": ["justify-content", "align-items"], "correct": 0},
+                    {"q": "const creates?", "a": ["immutable binding", "mutable var"], "correct": 0},
+                    {"q": "Array method to transform items?", "a": ["map", "filter"], "correct": 0},
+                    {"q": "== vs === checks?", "a": ["value+type", "value only"], "correct": 0},
+                    {"q": "DOM stands for?", "a": ["Document Object Model", "Data Object Model"], "correct": 0},
+                    {"q": "React state hook?", "a": ["useState", "useStatus"], "correct": 0},
+                    {"q": "Effect hook runs after?", "a": ["render", "compile"], "correct": 0},
+                    {"q": "Key prop in lists used for?", "a": ["stable identity", "styling"], "correct": 0},
+                    {"q": "CSS unit relative to root font?", "a": ["rem", "px"], "correct": 0},
+                    {"q": "Semantic tag for main content?", "a": ["<main>", "<div>"], "correct": 0},
+                    {"q": "Fetch returns a?", "a": ["Promise", "Observable"], "correct": 0},
+                    {"q": "JSON.parse converts?", "a": ["string->object", "object->string"], "correct": 0},
+                    {"q": "CSS Grid creates?", "a": ["2D layouts", "3D scenes"], "correct": 0},
+                    {"q": "React renders by?", "a": ["diffing virtual DOM", "editing DOM directly"], "correct": 0},
+                    {"q": "Input value controlled via?", "a": ["state", "props only"], "correct": 0},
+                    {"q": "Event to submit form?", "a": ["onSubmit", "onClick"], "correct": 0},
+                    {"q": "npm stands for?", "a": ["Node Package Manager", "New Project Manager"], "correct": 0},
+                    {"q": "Build tool used here?", "a": ["Vite", "Webpack only"], "correct": 0}
                 ]
             }
         }
@@ -144,6 +182,166 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
                     {"q": "Pandas primary structure?", "a": ["DataFrame", "Tensor"], "correct": 0}
                 ]
             }
+        }
+    ],
+    "Full-Stack Development": [
+        {
+            "index": 1,
+            "title": "Frontend + Backend Basics",
+            "description": "Understand client-server and rendering.",
+            "videos": ["https://www.youtube.com/watch?v=1Rs2ND1ryYc", "https://www.youtube.com/watch?v=Q-BpqyOT3a8"],
+            "quiz": {"questions": [
+                {"q": "What is REST?", "a": ["Architectural style", "Programming language"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "API integration",
+            "description": "Connect frontend to backend APIs.",
+            "videos": ["https://www.youtube.com/watch?v=9I8NzKj2sYo"],
+            "quiz": {"questions": [
+                {"q": "HTTP method to create?", "a": ["POST", "GET"], "correct": 0}
+            ]}
+        }
+    ],
+    "DevOps": [
+        {
+            "index": 1,
+            "title": "Version Control",
+            "description": "Git and GitHub.",
+            "videos": ["https://www.youtube.com/watch?v=Uszj_k0DGsg"],
+            "quiz": {"questions": [
+                {"q": "Command to commit?", "a": ["git commit", "git push"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "CI/CD Basics",
+            "description": "Pipelines and deployments.",
+            "videos": ["https://www.youtube.com/watch?v=scEDHsr3APg"],
+            "quiz": {"questions": [
+                {"q": "CI stands for?", "a": ["Continuous Integration", "Code Injection"], "correct": 0}
+            ]}
+        }
+    ],
+    "Cloud Computing": [
+        {
+            "index": 1,
+            "title": "Cloud Fundamentals",
+            "description": "IaaS, PaaS, SaaS.",
+            "videos": ["https://www.youtube.com/watch?v=3hLmDS179YE"],
+            "quiz": {"questions": [
+                {"q": "S3 is?", "a": ["Object storage", "Compute service"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "Serverless",
+            "description": "Functions as a Service.",
+            "videos": ["https://www.youtube.com/watch?v=EBSdyoO3goc"],
+            "quiz": {"questions": [
+                {"q": "AWS Lambda type?", "a": ["FaaS", "IaaS"], "correct": 0}
+            ]}
+        }
+    ],
+    "Data Engineering": [
+        {
+            "index": 1,
+            "title": "ETL Basics",
+            "description": "Extract, Transform, Load.",
+            "videos": ["https://www.youtube.com/watch?v=fuP4Kva87m8"],
+            "quiz": {"questions": [
+                {"q": "T in ETL?", "a": ["Transform", "Transfer"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "Big Data Systems",
+            "description": "Hadoop/Spark overview.",
+            "videos": ["https://www.youtube.com/watch?v=7ooZ4S7Ay6Y"],
+            "quiz": {"questions": [
+                {"q": "Spark is for?", "a": ["Distributed computing", "Web styling"], "correct": 0}
+            ]}
+        }
+    ],
+    "Cybersecurity": [
+        {
+            "index": 1,
+            "title": "Security Basics",
+            "description": "CIA triad.",
+            "videos": ["https://www.youtube.com/watch?v=inWWhr5tnEA"],
+            "quiz": {"questions": [
+                {"q": "CIA triad C?", "a": ["Confidentiality", "Computation"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "OWASP Top 10",
+            "description": "Common web risks.",
+            "videos": ["https://www.youtube.com/watch?v=EoaDgUgS6QA"],
+            "quiz": {"questions": [
+                {"q": "SQLi targets?", "a": ["Databases", "File system"], "correct": 0}
+            ]}
+        }
+    ],
+    "Mobile Development": [
+        {
+            "index": 1,
+            "title": "Mobile Platforms",
+            "description": "Android vs iOS.",
+            "videos": ["https://www.youtube.com/watch?v=fis26HvvDII"],
+            "quiz": {"questions": [
+                {"q": "Android language?", "a": ["Kotlin", "Swift"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "Cross-platform",
+            "description": "React Native overview.",
+            "videos": ["https://www.youtube.com/watch?v=0-S5a0eXPoc"],
+            "quiz": {"questions": [
+                {"q": "React Native uses?", "a": ["JavaScript", "Java only"], "correct": 0}
+            ]}
+        }
+    ],
+    "UI/UX Design": [
+        {
+            "index": 1,
+            "title": "Design Principles",
+            "description": "Hierarchy, contrast, spacing.",
+            "videos": ["https://www.youtube.com/watch?v=_ZKX3xHka0k"],
+            "quiz": {"questions": [
+                {"q": "UX focuses on?", "a": ["Experience", "Backend"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "Prototyping",
+            "description": "Wireframes to hi-fi.",
+            "videos": ["https://www.youtube.com/watch?v=hz2L1v8mK8w"],
+            "quiz": {"questions": [
+                {"q": "Tool for UI design?", "a": ["Figma", "Docker"], "correct": 0}
+            ]}
+        }
+    ],
+    "QA Automation": [
+        {
+            "index": 1,
+            "title": "Testing Fundamentals",
+            "description": "Unit, integration, e2e.",
+            "videos": ["https://www.youtube.com/watch?v=Eu35xM76kKY"],
+            "quiz": {"questions": [
+                {"q": "e2e tests simulate?", "a": ["User flows", "Code style"], "correct": 0}
+            ]}
+        },
+        {
+            "index": 2,
+            "title": "Automation Tools",
+            "description": "Selenium/Cypress basics.",
+            "videos": ["https://www.youtube.com/watch?v=7N63cMKOs44"],
+            "quiz": {"questions": [
+                {"q": "Cypress is for?", "a": ["Web testing", "Image editing"], "correct": 0}
+            ]}
         }
     ]
 }
