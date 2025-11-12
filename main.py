@@ -65,128 +65,105 @@ DOMAINS = [
     "QA Automation"
 ]
 
-# Simple in-code roadmaps (can be expanded or moved to DB later)
-ROADMAP: Dict[str, List[Dict[str, Any]]] = {
+# ----------------------
+# Roadmap generator with assessments after each step + final 20Q assessment
+# ----------------------
+
+def standard_20_questions() -> List[Dict[str, Any]]:
+    # Consistent 20 multiple-choice questions applicable across domains
+    return [
+        {"q": "HTTP status 200 means?", "a": ["OK", "Not Found"], "correct": 0},
+        {"q": "Which is a NoSQL DB?", "a": ["MongoDB", "PostgreSQL"], "correct": 0},
+        {"q": "Git command to commit?", "a": ["git commit", "git push"], "correct": 0},
+        {"q": "JSON.parse converts?", "a": ["string->object", "object->string"], "correct": 0},
+        {"q": "Array method to transform items?", "a": ["map", "find"], "correct": 0},
+        {"q": "Secure protocol for web?", "a": ["HTTPS", "FTP"], "correct": 0},
+        {"q": "Container platform?", "a": ["Docker", "Make"], "correct": 0},
+        {"q": "Cloud service model with Functions?", "a": ["FaaS", "IaaS"], "correct": 0},
+        {"q": "Primary purpose of CI?", "a": ["Automate builds/tests", "Design UI"], "correct": 0},
+        {"q": "DataFrame belongs to?", "a": ["Pandas", "NumPy only"], "correct": 0},
+        {"q": "Python list literal?", "a": ["[1,2]", "(1,2)"], "correct": 0},
+        {"q": "React is a?", "a": ["library", "database"], "correct": 0},
+        {"q": "CSS property for spacing outside?", "a": ["margin", "padding"], "correct": 0},
+        {"q": "OWASP item relates to?", "a": ["Web security", "Graphic design"], "correct": 0},
+        {"q": "Android primary language?", "a": ["Kotlin", "Swift"], "correct": 0},
+        {"q": "UX focuses on?", "a": ["Experience", "Networking"], "correct": 0},
+        {"q": "e2e tests simulate?", "a": ["User flows", "Static typing"], "correct": 0},
+        {"q": "Key in React lists used for?", "a": ["stable identity", "styling"], "correct": 0},
+        {"q": "SQL stands for?", "a": ["Structured Query Language", "Simple Query Logic"], "correct": 0},
+        {"q": "Version control platform?", "a": ["GitHub", "Figma"], "correct": 0},
+    ]
+
+# Base learning steps per domain
+BASE_ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     "Frontend Development": [
         {
-            "index": 1,
             "title": "HTML & CSS Basics",
             "description": "Learn structure and styling.",
             "videos": [
                 "https://www.youtube.com/watch?v=G3e-cpL7ofc",
                 "https://www.youtube.com/watch?v=1Rs2ND1ryYc"
             ],
-            "quiz": {
-                "questions": [
-                    {"q": "HTML stands for?", "a": ["HyperText Markup Language", "Hyperlinks and Text Markup Language"], "correct": 0},
-                    {"q": "CSS is used for?", "a": ["Styling", "Database"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "HTML stands for?", "a": ["HyperText Markup Language", "Hyperlinks and Text Markup Language"], "correct": 0},
+                {"q": "CSS is used for?", "a": ["Styling", "Database"], "correct": 0}
+            ]}
         },
         {
-            "index": 2,
             "title": "JavaScript Fundamentals",
             "description": "Variables, functions, DOM.",
             "videos": ["https://www.youtube.com/watch?v=PkZNo7MFNFg"],
-            "quiz": {
-                "questions": [
-                    {"q": "typeof null is?", "a": ["object", "null"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "typeof null is?", "a": ["object", "null"], "correct": 0}
+            ]}
         },
         {
-            "index": 3,
             "title": "React Basics",
             "description": "Components and hooks.",
             "videos": ["https://www.youtube.com/watch?v=bMknfKXIFA8"],
-            "quiz": {
-                "questions": [
-                    {"q": "React is a ...", "a": ["library", "framework"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "React is a ...", "a": ["library", "framework"], "correct": 0}
+            ]}
         },
-        {
-            "index": 4,
-            "title": "Final Assessment (20 questions)",
-            "description": "Comprehensive assessment across HTML/CSS/JS/React.",
-            "videos": [],
-            "quiz": {
-                "questions": [
-                    {"q": "HTML tags are enclosed in?", "a": ["< >", "{ }"], "correct": 0},
-                    {"q": "Which tag links CSS?", "a": ["<link>", "<style>"], "correct": 0},
-                    {"q": "Flexbox property to align along main axis?", "a": ["justify-content", "align-items"], "correct": 0},
-                    {"q": "const creates?", "a": ["immutable binding", "mutable var"], "correct": 0},
-                    {"q": "Array method to transform items?", "a": ["map", "filter"], "correct": 0},
-                    {"q": "== vs === checks?", "a": ["value+type", "value only"], "correct": 0},
-                    {"q": "DOM stands for?", "a": ["Document Object Model", "Data Object Model"], "correct": 0},
-                    {"q": "React state hook?", "a": ["useState", "useStatus"], "correct": 0},
-                    {"q": "Effect hook runs after?", "a": ["render", "compile"], "correct": 0},
-                    {"q": "Key prop in lists used for?", "a": ["stable identity", "styling"], "correct": 0},
-                    {"q": "CSS unit relative to root font?", "a": ["rem", "px"], "correct": 0},
-                    {"q": "Semantic tag for main content?", "a": ["<main>", "<div>"], "correct": 0},
-                    {"q": "Fetch returns a?", "a": ["Promise", "Observable"], "correct": 0},
-                    {"q": "JSON.parse converts?", "a": ["string->object", "object->string"], "correct": 0},
-                    {"q": "CSS Grid creates?", "a": ["2D layouts", "3D scenes"], "correct": 0},
-                    {"q": "React renders by?", "a": ["diffing virtual DOM", "editing DOM directly"], "correct": 0},
-                    {"q": "Input value controlled via?", "a": ["state", "props only"], "correct": 0},
-                    {"q": "Event to submit form?", "a": ["onSubmit", "onClick"], "correct": 0},
-                    {"q": "npm stands for?", "a": ["Node Package Manager", "New Project Manager"], "correct": 0},
-                    {"q": "Build tool used here?", "a": ["Vite", "Webpack only"], "correct": 0}
-                ]
-            }
-        }
     ],
     "Backend Development": [
         {
-            "index": 1,
             "title": "HTTP & REST",
             "description": "Understand APIs.",
             "videos": ["https://www.youtube.com/watch?v=Q-BpqyOT3a8"],
-            "quiz": {
-                "questions": [
-                    {"q": "HTTP status 200 means?", "a": ["OK", "Not Found"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "HTTP status 200 means?", "a": ["OK", "Not Found"], "correct": 0}
+            ]}
         },
         {
-            "index": 2,
             "title": "Databases",
             "description": "SQL vs NoSQL.",
             "videos": ["https://www.youtube.com/watch?v=ztHopE5Wnpc"],
-            "quiz": {
-                "questions": [
-                    {"q": "MongoDB is ...", "a": ["NoSQL", "SQL"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "MongoDB is ...", "a": ["NoSQL", "SQL"], "correct": 0}
+            ]}
         }
     ],
     "AI/ML": [
         {
-            "index": 1,
             "title": "Python Basics",
             "description": "Syntax and data structures.",
             "videos": ["https://www.youtube.com/watch?v=_uQrJ0TkZlc"],
-            "quiz": {
-                "questions": [
-                    {"q": "Which is a list?", "a": ["[1,2,3]", "(1,2,3)"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "Which is a list?", "a": ["[1,2,3]", "(1,2,3)"], "correct": 0}
+            ]}
         },
         {
-            "index": 2,
             "title": "NumPy & Pandas",
             "description": "Data handling.",
             "videos": ["https://www.youtube.com/watch?v=vmEHCJofslg"],
-            "quiz": {
-                "questions": [
-                    {"q": "Pandas primary structure?", "a": ["DataFrame", "Tensor"], "correct": 0}
-                ]
-            }
+            "quiz": {"questions": [
+                {"q": "Pandas primary structure?", "a": ["DataFrame", "Tensor"], "correct": 0}
+            ]}
         }
     ],
     "Full-Stack Development": [
         {
-            "index": 1,
             "title": "Frontend + Backend Basics",
             "description": "Understand client-server and rendering.",
             "videos": ["https://www.youtube.com/watch?v=1Rs2ND1ryYc", "https://www.youtube.com/watch?v=Q-BpqyOT3a8"],
@@ -195,7 +172,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "API integration",
             "description": "Connect frontend to backend APIs.",
             "videos": ["https://www.youtube.com/watch?v=9I8NzKj2sYo"],
@@ -206,7 +182,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "DevOps": [
         {
-            "index": 1,
             "title": "Version Control",
             "description": "Git and GitHub.",
             "videos": ["https://www.youtube.com/watch?v=Uszj_k0DGsg"],
@@ -215,7 +190,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "CI/CD Basics",
             "description": "Pipelines and deployments.",
             "videos": ["https://www.youtube.com/watch?v=scEDHsr3APg"],
@@ -226,7 +200,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "Cloud Computing": [
         {
-            "index": 1,
             "title": "Cloud Fundamentals",
             "description": "IaaS, PaaS, SaaS.",
             "videos": ["https://www.youtube.com/watch?v=3hLmDS179YE"],
@@ -235,7 +208,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "Serverless",
             "description": "Functions as a Service.",
             "videos": ["https://www.youtube.com/watch?v=EBSdyoO3goc"],
@@ -246,7 +218,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "Data Engineering": [
         {
-            "index": 1,
             "title": "ETL Basics",
             "description": "Extract, Transform, Load.",
             "videos": ["https://www.youtube.com/watch?v=fuP4Kva87m8"],
@@ -255,7 +226,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "Big Data Systems",
             "description": "Hadoop/Spark overview.",
             "videos": ["https://www.youtube.com/watch?v=7ooZ4S7Ay6Y"],
@@ -266,7 +236,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "Cybersecurity": [
         {
-            "index": 1,
             "title": "Security Basics",
             "description": "CIA triad.",
             "videos": ["https://www.youtube.com/watch?v=inWWhr5tnEA"],
@@ -275,7 +244,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "OWASP Top 10",
             "description": "Common web risks.",
             "videos": ["https://www.youtube.com/watch?v=EoaDgUgS6QA"],
@@ -286,7 +254,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "Mobile Development": [
         {
-            "index": 1,
             "title": "Mobile Platforms",
             "description": "Android vs iOS.",
             "videos": ["https://www.youtube.com/watch?v=fis26HvvDII"],
@@ -295,7 +262,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "Cross-platform",
             "description": "React Native overview.",
             "videos": ["https://www.youtube.com/watch?v=0-S5a0eXPoc"],
@@ -306,7 +272,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "UI/UX Design": [
         {
-            "index": 1,
             "title": "Design Principles",
             "description": "Hierarchy, contrast, spacing.",
             "videos": ["https://www.youtube.com/watch?v=_ZKX3xHka0k"],
@@ -315,7 +280,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "Prototyping",
             "description": "Wireframes to hi-fi.",
             "videos": ["https://www.youtube.com/watch?v=hz2L1v8mK8w"],
@@ -326,7 +290,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
     ],
     "QA Automation": [
         {
-            "index": 1,
             "title": "Testing Fundamentals",
             "description": "Unit, integration, e2e.",
             "videos": ["https://www.youtube.com/watch?v=Eu35xM76kKY"],
@@ -335,7 +298,6 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
             ]}
         },
         {
-            "index": 2,
             "title": "Automation Tools",
             "description": "Selenium/Cypress basics.",
             "videos": ["https://www.youtube.com/watch?v=7N63cMKOs44"],
@@ -343,8 +305,42 @@ ROADMAP: Dict[str, List[Dict[str, Any]]] = {
                 {"q": "Cypress is for?", "a": ["Web testing", "Image editing"], "correct": 0}
             ]}
         }
-    ]
+    ],
 }
+
+# Build full ROADMAP: After each learning step, insert a 20-question assessment, and append a final 20-question assessment
+ROADMAP: Dict[str, List[Dict[str, Any]]] = {}
+for domain, steps in BASE_ROADMAP.items():
+    expanded: List[Dict[str, Any]] = []
+    idx = 1
+    for s_i, s in enumerate(steps, start=1):
+        # Learning step
+        expanded.append({
+            "index": idx,
+            "title": s["title"],
+            "description": s.get("description", ""),
+            "videos": s.get("videos", []),
+            "quiz": s.get("quiz", {"questions": []}),
+        })
+        idx += 1
+        # Post-step assessment
+        expanded.append({
+            "index": idx,
+            "title": f"Assessment after Step {s_i} (20 questions)",
+            "description": "Evaluate your understanding of the previous step.",
+            "videos": [],
+            "quiz": {"questions": standard_20_questions()},
+        })
+        idx += 1
+    # Final comprehensive assessment
+    expanded.append({
+        "index": idx,
+        "title": "Final Assessment (20 questions)",
+        "description": "Comprehensive assessment for the domain.",
+        "videos": [],
+        "quiz": {"questions": standard_20_questions()},
+    })
+    ROADMAP[domain] = expanded
 
 # ----------------------
 # Schemas
